@@ -3,22 +3,21 @@ require 'bookmarks.rb'
 describe Bookmark do
   describe '.all' do
     it 'lists all bookmarks' do
-      Bookmark.create("http://www.makersacademy.com")
-      Bookmark.create("http://www.destroyallsoftware.com")
-      Bookmark.create("http://www.google.com")
+      add_test_bookmarks
       bookmarks = Bookmark.all
-      expect(bookmarks).to include "http://www.makersacademy.com"
-      expect(bookmarks).to include "http://www.destroyallsoftware.com"
-      expect(bookmarks).to include "http://www.google.com"
+      expect(bookmarks[0].title).to include "Makers"
+      expect(bookmarks[1].title).to include "Destroy"
+      expect(bookmarks[2].title).to include "Google"
     end
   end
 
   describe '.create' do
     it 'adds to the list of bookmarks' do
       add_test_bookmarks
-      Bookmark.create("http://www.facebook.com")
+      Bookmark.create("http://www.facebook.com", "Facebook")
       bookmarks = Bookmark.all
-      expect(bookmarks).to include("http://www.facebook.com")
+      expect(bookmarks[-1].title).to include("Facebook")
+      expect(bookmarks[-1].url).to eq "http://www.facebook.com"
     end
   end
 end

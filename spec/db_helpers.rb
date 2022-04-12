@@ -6,6 +6,7 @@ def truncate_database
 end
 
 def add_test_bookmarks
-    connection = PG.connect(dbname: 'bookmark_manager_test')
-    connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.google.com'), ('http://www.destroyallsoftware.com'), ('http://www.makersacademy.com');")
+    Bookmark.create("http://www.makersacademy.com", "Makers")
+    Bookmark.create("http://www.destroyallsoftware.com", "Destroy")
+    Bookmark.create("http://www.google.com", "Google")
 end

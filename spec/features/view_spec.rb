@@ -10,8 +10,13 @@ end
 feature 'View bookmarks' do
   scenario 'User can see bookmarks' do
     add_test_bookmarks
-    bookmarks = Bookmark.all
     visit('/bookmarks')
-    expect(page).to have_content "http://www.google.com"
+    expect(page).to have_content "Google"
+  end
+  scenario 'Bookmarks have buttons' do
+    add_test_bookmarks
+    visit('/bookmarks')
+    expect(page).to have_link('Makers', href: 'http://www.makersacademy.com')
   end
 end
+
