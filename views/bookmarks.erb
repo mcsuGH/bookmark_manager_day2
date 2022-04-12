@@ -1,1 +1,11 @@
-http://www.google.com/
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= bookmark %></li>
+  <% end %>
+</ul>
+
+<form action = '/add_bookmark' method = "post" >
+<label for url> Add Bookmark: </label>
+<input type = "text" id = "url" name = "url">
+<input type = "submit" value = "Submit" >
+</form>

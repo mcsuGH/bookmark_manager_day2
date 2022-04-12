@@ -1,39 +1,21 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/monicanavarro/Documents/repositories/bookmark_manager/bookmark_manager/app.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/monicanavarro/Documents/repositories/bookmark_manager/bookmark_manager/spec/bookmarks_spec.rb": {
+      "/Users/michaelsu/week8/bookmark_manager_day2/spec/bookmarks_spec.rb": {
         "lines": [
           1,
           null,
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
-          1,
-          1,
+          null,
+          null,
           1,
           1,
           1,
@@ -45,27 +27,21 @@
           null
         ]
       },
-      "/Users/monicanavarro/Documents/repositories/bookmark_manager/bookmark_manager/lib/bookmarks.rb": {
+      "/Users/michaelsu/week8/bookmark_manager_day2/spec/features/add_a_bookmark_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          2,
-          2,
-          null,
-          0,
-          null,
-          2,
-          8,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/monicanavarro/Documents/repositories/bookmark_manager/bookmark_manager/spec/features/view_spec.rb": {
+      "/Users/michaelsu/week8/bookmark_manager_day2/spec/features/view_spec.rb": {
         "lines": [
           1,
           null,
@@ -76,6 +52,8 @@
           null,
           null,
           null,
+          1,
+          1,
           1,
           1,
           1,
@@ -85,6 +63,6 @@
         ]
       }
     },
-    "timestamp": 1649696345
+    "timestamp": 1649777721
   }
 }

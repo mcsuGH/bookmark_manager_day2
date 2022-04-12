@@ -7,6 +7,11 @@
 As a user
 So that I can easily access the websites I use regularly
 I would like to see a list of bookmarks
+
+As a user
+So that I can easily access the websites I use regularly
+I would like to add to my list of bookmarks
+
 ```
 
 ## Domain Model
