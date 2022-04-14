@@ -17,6 +17,10 @@ I would like to add to my list of bookmarks
 As a user
 So that I am able to remove websites I no longer use
 I would like to delete from my list of bookmarks
+
+As a user
+So that I can keep the links in my bookmarks up to date
+I would like to be able to update my bookmarks
 ```
 
 ## Domain Model
