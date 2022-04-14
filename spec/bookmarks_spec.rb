@@ -14,7 +14,7 @@ describe Bookmark do
   describe '.create' do
     it 'adds to the list of bookmarks' do
       add_test_bookmarks
-      Bookmark.create("http://www.facebook.com", "Facebook")
+      Bookmark.create(url: "http://www.facebook.com", title: "Facebook")
       bookmarks = Bookmark.all
       expect(bookmarks[-1].title).to include("Facebook")
       expect(bookmarks[-1].url).to eq "http://www.facebook.com"
@@ -23,9 +23,8 @@ describe Bookmark do
 
   describe '.delete' do
     it 'deletes from the list of bookmarks' do
-      bookmark = Bookmark.create('Makers Academy', 'http://www.makersacademy.com')
+      bookmark = Bookmark.create(url: 'Makers Academy', title: 'http://www.makersacademy.com')
       Bookmark.delete(id: bookmark.id)
-      p Bookmark.all
       expect(Bookmark.all.length).to eq 0
     end
   end

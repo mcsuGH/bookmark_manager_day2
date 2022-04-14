@@ -6,7 +6,7 @@ def truncate_database
 end
 
 def add_test_bookmarks
-    Bookmark.create("http://www.makersacademy.com", "Makers")
-    Bookmark.create("http://www.destroyallsoftware.com", "Destroy")
-    Bookmark.create("http://www.google.com", "Google")
+    Bookmark.create(url: "http://www.makersacademy.com", title: "Makers")
+    Bookmark.create(url: "http://www.destroyallsoftware.com", title: "Destroy")
+    Bookmark.create(url: "http://www.google.com", title: "Google")
 end
