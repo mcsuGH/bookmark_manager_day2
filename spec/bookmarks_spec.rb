@@ -20,4 +20,13 @@ describe Bookmark do
       expect(bookmarks[-1].url).to eq "http://www.facebook.com"
     end
   end
+
+  describe '.delete' do
+    it 'deletes from the list of bookmarks' do
+      bookmark = Bookmark.create('Makers Academy', 'http://www.makersacademy.com')
+      Bookmark.delete(id: bookmark.id)
+      p Bookmark.all
+      expect(Bookmark.all.length).to eq 0
+    end
+  end
 end

@@ -1,10 +1,11 @@
 require 'pg'
 
 class Bookmark
-  attr_reader :url, :title
-  def initialize(url, title)
+  attr_reader :url, :title, :id
+  def initialize(url, title, id)
     @title = title
     @url = url
+    @id = id
   end
 
   def self.all
@@ -14,7 +15,7 @@ class Bookmark
       connection = PG.connect(dbname: 'bookmark_manager')
     end
     result = connection.exec("SELECT * FROM bookmarks;")
-    result.map { |bookmark| Bookmark.new(bookmark['url'], bookmark['title'])}
+    result.map { |bookmark| Bookmark.new(bookmark['url'], bookmark['title'], bookmark['id'])}
   end
 
   def self.create(url, title)
@@ -23,8 +24,19 @@ class Bookmark
     else
       connection = PG.connect(dbname: 'bookmark_manager')
     end
-    connection.exec("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}');")
-    Bookmark.new(url, title)
+    result = connection.exec_params(
+      "INSERT INTO bookmarks (url, title) VALUES($1, $2) RETURNING id, title, url;", [url, title]
+      )
+    Bookmark.new(result[0]['url'], result[0]['title'], result[0]['id'])
+  end
+
+  def self.delete(id:)
+    if ENV['RACK_ENV'] == 'test'
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+    else
+      connection = PG.connect(dbname: 'bookmark_manager')
+    end
+    connection.exec_params("DELETE FROM bookmarks WHERE id = $1", [id])
   end
 end
 
